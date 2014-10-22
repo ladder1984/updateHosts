@@ -13,5 +13,11 @@ import shutil
 
 hostsSource="https://raw.githubusercontent.com/zxdrive/imouto.host/master/imouto.host.txt"
 hostsLocation="C:\Windows\System32\drivers\etc\hosts"
-urlretrieve(hostsSource,"hosts")
-shutil.move("hosts",hostsLocation)
+try:
+    urlretrieve(hostsSource,"hosts")
+except:
+    pass
+try:
+    shutil.move("hosts",hostsLocation)
+except:
+    pass
