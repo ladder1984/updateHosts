@@ -9,7 +9,7 @@ updateHosts
 从imouto.host下载hosts文件并更新本地hosts
 
 ##计划功能
-- 自动添加启动项
-- 打包成exe
+- ~~自动添加启动项~~
+- ~~打包成exe~~
 - 备份hosts
 - Linux支持
