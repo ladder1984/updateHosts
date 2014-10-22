@@ -2,7 +2,7 @@ updateHosts
 ============
 
 ##运行环境
-- 操作系统：windows
+- 操作系统：Windows
 - python版本：2.x
 
 ##功能描述
@@ -12,3 +12,4 @@ updateHosts
 - 自动添加启动项
 - 打包成exe
 - 备份hosts
+- Linux支持
