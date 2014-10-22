@@ -3,7 +3,7 @@
 #############################
 #name:updateHosts
 #author:https://github.com/ladder1984
-#version:0.0.1
+#version:0.0.2
 #python version:2.7.8
 ############################
 

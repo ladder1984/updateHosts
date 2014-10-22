@@ -1,4 +1,7 @@
-updateHosts ChangeLog 
+﻿updateHosts ChangeLog 
 ==============
-0.0.1 , 2014/10/22
+0.0.1  2014/10/22
 首个版本
+
+0.0.2 2014/10/22
+新增addToStartup.js文件，用于添加启动项
