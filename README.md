@@ -23,4 +23,4 @@ updateHosts
 - updateHosts项目地址：<https://github.com/ladder1984/updateHosts>
 -  ChangeLog <https://github.com/ladder1984/updateHosts/blob/master/ChangeLog.txt>
 - 代码风格遵循[Python Style Guide](https://google-styleguide.googlecode.com/svn/trunk/pyguide.html "Google Python Style Guide")
-- 版本号命名遵循[http://semver.org/lang/zh-CN/](http://semver.org/lang/zh-CN/ "语义化版本控制规范（SemVer）")
+- 版本号命名遵循[语义化版本控制规范（SemVer）](http://semver.org/lang/zh-CN/ "语义化版本控制规范（SemVer）")
