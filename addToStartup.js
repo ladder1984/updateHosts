@@ -1,5 +1,3 @@
-
-
 function CreateShortcut(target_path)
 {
    wsh = new ActiveXObject('WScript.Shell');
@@ -14,9 +12,7 @@ function CreateShortcut(target_path)
 
 function main()
 {
-   
     CreateShortcut();
-
 }
 
 main();
