@@ -7,7 +7,7 @@ updateHosts
 
 ##功能描述
 - **（已完成）**下载hosts文件并更新本地hosts
-- **（已完成）**updateHosts.py单文件可使用
+- **（已完成）**可单文件执行updateHosts
 - **（已完成）**可添加启动项
 - **（已完成）**生成错误日志errorLog.txt
 - **（已完成）**可去除AdBlock部分，默认启用
