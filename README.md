@@ -16,4 +16,11 @@ updateHosts
 
 ##待添加功能
 - 备份hosts
+- 配置信息分离到ini文件
+- 打包成无需python环境的exe文件（待版本更新到1.0.0）
 
+##其他
+- updateHosts项目地址：<https://github.com/ladder1984/updateHosts>
+-  ChangeLog <https://github.com/ladder1984/updateHosts/blob/master/ChangeLog.txt>
+- 代码风格遵循[Python Style Guide](https://google-styleguide.googlecode.com/svn/trunk/pyguide.html "Google Python Style Guide")
+- 版本号命名遵循[http://semver.org/lang/zh-CN/](http://semver.org/lang/zh-CN/ "语义化版本控制规范（SemVer）")
