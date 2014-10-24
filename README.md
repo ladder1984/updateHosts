@@ -23,7 +23,7 @@ updateHosts
 当前hosts源为[imouto.host](https://github.com/zxdrive/imouto.host "imouto.host")，今后将添加 [someHosts](https://github.com/ladder1984/someHosts) 项目中的一些hosts源
 
 ##使用方法
-下载**updateHosts.py**和**addToStarup.js**到本地，直接运行updateHosts.py更新hosts，点击addToStarup.js将py文件的快捷方式加入启动项。亦可直接把updateHosts.py放到启动文件夹。
+下载**updateHosts.py**、**addToStarup.js**和**config.ini**到本地，直接运行updateHosts.py更新hosts，点击addToStarup.js将py文件的快捷方式加入启动项。亦可直接把updateHosts.py放到启动文件夹。
 
 
 ##其他
