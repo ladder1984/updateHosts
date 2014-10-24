@@ -4,7 +4,7 @@
 #name:updateHosts
 #author:https://github.com/ladder1984
 #python version:2.7.8
-#version:0.1.0
+#version:0.1.1
 ############################
 
 
@@ -37,11 +37,10 @@ def get_config():
 
 
 def backup_hosts():
-
     if not os.path.isfile(hosts_folder + 'backup_hosts_original_by_updateHosts'):
-        if os.path.exists(hosts_folder + 'host'):
+        if os.path.isfile(hosts_folder + 'hosts'):
             shutil.copy(hosts_folder+'hosts', hosts_folder+'backup_hosts_original_by_updateHosts')
-    if os.path.exists(hosts_folder + 'host'):
+    if os.path.isfile(hosts_folder + 'hosts'):
         shutil.copy(hosts_folder+'hosts', hosts_folder+'backup_hosts_last_by_updateHosts')
 
 

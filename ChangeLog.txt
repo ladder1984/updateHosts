@@ -1,5 +1,8 @@
 ﻿updateHosts ChangeLog 
 ==============
+0.1.1 2014/10/24
+bug fixed
+
 0.1.0 2014/10/24
 分离出配置文件；可选hosts源
 
