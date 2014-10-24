@@ -4,7 +4,7 @@
 #name:updateHosts
 #author:https://github.com/ladder1984
 #python version:2.7.8
-#version:0.1.2
+#version:0.1.3
 ############################
 
 
@@ -17,8 +17,8 @@ import ConfigParser
 
 #default setting
 hosts_source = "https://raw.githubusercontent.com/zxdrive/imouto.host/master/imouto.host.txt"
-hosts_folder = "C:\Windows\System32\drivers\etc\\"
-hosts_location = "C:\Windows\System32\drivers\etc\hosts"
+hosts_folder = os.environ['SYSTEMROOT']+"\\System32\drivers\etc\\"
+hosts_location = hosts_folder + "hosts"
 noAdBlock = 1
 #default setting
 
