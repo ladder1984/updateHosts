@@ -4,7 +4,7 @@
 #name:updateHosts
 #author:https://github.com/ladder1984
 #python version:2.7.8
-#version:0.1.1
+#version:0.1.2
 ############################
 
 
@@ -28,9 +28,9 @@ errorLog = open('errorLog.txt', 'a')
 def get_config():
     global hosts_source
     global noAdBlock
-    if os.path.exists('setting.ini'):
+    if os.path.exists('config.ini'):
         config = ConfigParser.ConfigParser()
-        config.read('setting.ini')
+        config.read('config.ini')
         source_id = config.get('source_select', 'source_id')
         hosts_source = config.get('source_select', 'source'+source_id)
         noAdBlock = config.getint('other', 'noadblock')
