@@ -1,3 +1,5 @@
 errorLog.txt
 /.idea
 /test
+!python27.exe
+!python27.dll
