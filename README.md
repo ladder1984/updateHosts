@@ -1,6 +1,14 @@
 updateHosts
 ============
 
+##简介
+自动更新hosts文件
+
+##使用方法
+下载地址：https://github.com/ladder1984/updateHosts/archive/master.zip
+
+解压即可使用，无需安装Python。点击start.vbs运行，点击addToStartup.js加入启动项。
+
 ##运行环境
 - 操作系统：Windows
 
@@ -25,11 +33,6 @@ hosts源来源于网络，用户可选或者自定义。目前收录了：
 - google-hosts <https://github.com/txthinking/google-hosts>
 
 用户可在config.ini中选择
-
-##使用方法
-下载地址：https://github.com/ladder1984/updateHosts/archive/master.zip
-
-解压即可使用，无需安装Python。点击start.vbs运行，点击addToStartup.js加入启动项。
 
 
 ##其他
