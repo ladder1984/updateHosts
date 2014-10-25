@@ -4,7 +4,7 @@
 #name:updateHosts
 #author:https://github.com/ladder1984
 #python version:2.7.8
-#version:0.1.3
+#version:0.1.4
 ############################
 
 
@@ -29,6 +29,13 @@ def get_config():
     global hosts_source
     global noAdBlock
     if os.path.exists('config.ini'):
+        #清除Windows记事本自动添加的BOM
+        content = open('config.ini').read()
+        content = re.sub(r"\xfe\xff", "", content)
+        content = re.sub(r"\xff\xfe", "", content)
+        content = re.sub(r"\xef\xbb\xbf", "", content)
+        open('config.ini', 'w').write(content)
+
         config = ConfigParser.ConfigParser()
         config.read('config.ini')
         source_id = config.get('source_select', 'source_id')
