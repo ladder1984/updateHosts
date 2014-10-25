@@ -3,7 +3,6 @@ updateHosts
 
 ##运行环境
 - 操作系统：Windows
-- Python版本：2.x
 
 ##功能描述
 - **（已完成）**下载hosts文件并更新本地hosts
@@ -14,8 +13,8 @@ updateHosts
 - **（已完成）**备份hosts文件
 - **（已完成）**分离出单独的配置文件
 - **（已完成）**可选的hosts更新源
-- （未完成）运行时不显示窗口
-- （未完成）打包成exe文件，无需安装python即可使用（v1.0.0时添加）
+- **（已完成）**运行时不显示窗口
+- **（已完成）**打包成exe文件，无需安装python即可使用
 - 待添加
 
 
@@ -28,14 +27,18 @@ hosts源来源于网络，用户可选或者自定义。目前收录了：
 用户可在config.ini中选择
 
 ##使用方法
-下载**updateHosts.py**、**addToStarup.js**和**config.ini**到本地，直接运行updateHosts.py更新hosts，点击addToStarup.js将py文件的快捷方式加入启动项。亦可直接把updateHosts.py放到启动文件夹。
+下载地址：https://github.com/ladder1984/updateHosts/archive/master.zip
+
+解压即可使用，无需安装Python。点击start.vbs运行，点击addToStartup.js加入启动项。
 
 
 ##其他
 - updateHosts项目地址：<https://github.com/ladder1984/updateHosts>
 - ChangeLog：<https://github.com/ladder1984/updateHosts/blob/master/ChangeLog.txt>
-- 代码风格遵循[Python Style Guide](https://google-styleguide.googlecode.com/svn/trunk/pyguide.html "Google Python Style Guide")
+- 基于Python2.7.8开发，代码风格遵循[Python Style Guide](https://google-styleguide.googlecode.com/svn/trunk/pyguide.html "Google Python Style Guide")
 - 版本号命名遵循[语义化版本控制规范（SemVer）](http://semver.org/lang/zh-CN/ "语义化版本控制规范（SemVer）")
 
-##许可协议
-使用[MIT](https://github.com/ladder1984/updateHosts/blob/master/LICENSE)协议
+##版权声明
+- 本软件使用[MIT](https://github.com/ladder1984/updateHosts/blob/master/LICENSE)协议
+- hosts源版权归原版权方所有
+- Python运行环境取自[Goagent](https://github.com/goagent/goagent)，版权归原版权方所有
