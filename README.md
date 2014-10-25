@@ -30,6 +30,7 @@ updateHosts
 
 ##hosts源
 hosts源来源于网络，用户可选或者自定义。目前收录了：
+
 - smarthosts <https://code.google.com/p/smarthosts/>
 - imouto.host <https://github.com/zxdrive/imouto.host>
 - google-hosts <https://github.com/txthinking/google-hosts>
@@ -42,6 +43,7 @@ hosts源来源于网络，用户可选或者自定义。目前收录了：
 - ChangeLog：<https://github.com/ladder1984/updateHosts/blob/master/ChangeLog.txt>
 - 基于Python2.7.8开发，代码风格遵循[Python Style Guide](https://google-styleguide.googlecode.com/svn/trunk/pyguide.html "Google Python Style Guide")
 - 版本号命名遵循[语义化版本控制规范（SemVer）](http://semver.org/lang/zh-CN/ "语义化版本控制规范（SemVer）")
+- 欢迎反馈问题和建议，地址：<https://github.com/ladder1984/updateHosts/issues>
 
 ##版权声明
 - 本软件使用[MIT](https://github.com/ladder1984/updateHosts/blob/master/LICENSE)协议
