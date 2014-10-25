@@ -9,6 +9,8 @@ updateHosts
 
 解压即可使用，无需安装Python。点击start.vbs运行，点击addToStartup.js加入启动项。
 
+**注意：**可能需要授予程序管理员权限：右击python27.exe，选中“属性”，在“兼容性”里勾选“以管理员身份运行此程序”。
+
 ##运行环境
 - 操作系统：Windows
 
