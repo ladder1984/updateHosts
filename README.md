@@ -41,7 +41,6 @@ hosts源来源于网络，用户可选或者自定义。目前收录了：
 ##其他
 - updateHosts项目地址：<https://github.com/ladder1984/updateHosts>
 - ChangeLog：<https://github.com/ladder1984/updateHosts/blob/master/ChangeLog.txt>
-- 基于Python2.7.8开发，代码风格遵循[Python Style Guide](https://google-styleguide.googlecode.com/svn/trunk/pyguide.html "Google Python Style Guide")
 - 版本号命名遵循[语义化版本控制规范（SemVer）](http://semver.org/lang/zh-CN/ "语义化版本控制规范（SemVer）")
 - 欢迎反馈问题和建议，地址：<https://github.com/ladder1984/updateHosts/issues>
 
