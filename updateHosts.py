@@ -4,7 +4,7 @@
 #name:updateHosts
 #author:https://github.com/ladder1984
 #python version:2.7.8
-#version:0.1.4
+#version:1.1.0
 ############################
 
 
@@ -40,7 +40,7 @@ def get_config():
         config.read('config.ini')
         source_id = config.get('source_select', 'source_id')
         hosts_source = config.get('source_select', 'source'+source_id)
-        noAdBlock = config.getint('other', 'noadblock')
+        #noAdBlock = config.getint('other', 'noadblock')
 
 
 def backup_hosts():
@@ -53,21 +53,37 @@ def backup_hosts():
 
 def download_hosts():
     try:
-        urlretrieve(hosts_source, "hosts")
+        urlretrieve(hosts_source, "hosts_from_web")
     except IOError, e:
         errorLog.write(str(datetime.now())+'\n'+str(e)+'\n\n')
 
+def process_hosts():
+    hosts_content = open('hosts','w')
+    file_from_web = open('hosts_from_web')
+    hosts_from_web = file_from_web.read()
+    file_user_defined=open('hosts_user_defined.txt')
+    hosts_user_defined=file_user_defined.read()
+    hosts_content.write('#hosts_user_defined\n\n')
+    hosts_content.write(hosts_user_defined)
+    hosts_content.write('#hosts_user_defined\n')
+    hosts_content.write('\n\n#hosts_by_hostsUpdate\n\n')
+    hosts_content.write(hosts_from_web)
+    hosts_content.write('\n#hosts_by_hostsUpdate')
+    hosts_content.close()
+    file_from_web.close()
+    file_user_defined.close()
+    os.remove('hosts_from_web')
 
-def del_adblock():
-    if noAdBlock == 1:
-        file_to_open = open('hosts', 'r')
-        hosts_content = file_to_open.read()
-        hosts_content = re.sub('#AdBlock START([\s\S]*)#AdBlock END', "#", hosts_content)
-        file_to_open.close()
-
-        file_to_open = open('hosts', 'w')
-        file_to_open.write(hosts_content)
-        file_to_open.close()
+# def del_adblock():
+#     if noAdBlock == 1:
+#         file_to_open = open('hosts', 'r')
+#         hosts_content = file_to_open.read()
+#         hosts_content = re.sub('#AdBlock START([\s\S]*)#AdBlock END', "#", hosts_content)
+#         file_to_open.close()
+#
+#         file_to_open = open('hosts', 'w')
+#         file_to_open.write(hosts_content)
+#         file_to_open.close()
 
 
 def move_hosts():
@@ -83,7 +99,8 @@ def main():
     get_config()
     backup_hosts()
     download_hosts()
-    del_adblock()
+    process_hosts()
+#    del_adblock()
     move_hosts()
 
 if __name__ == '__main__':
