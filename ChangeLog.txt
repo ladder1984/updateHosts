@@ -1,5 +1,8 @@
 ﻿updateHosts ChangeLog 
 ==============
+1.1.2 2014/10/28
+代码优化
+
 1.1.1 2014/10/27
 bug fixes
 
