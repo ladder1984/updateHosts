@@ -1,5 +1,8 @@
 ﻿updateHosts ChangeLog 
 ==============
+1.1.1 2014/10/27
+bug fixes
+
 1.1.0 2014/10/27
 添加hosts源https://simpleu.googlecode.com/svn/trunk/hosts
 关闭no_adblock功能

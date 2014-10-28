@@ -4,7 +4,7 @@
 #name:updateHosts
 #author:https://github.com/ladder1984
 #python version:2.7.8
-#version:1.1.0
+#version:1.1.1
 ############################
 
 
@@ -63,9 +63,9 @@ def process_hosts():
     hosts_from_web = file_from_web.read()
     file_user_defined=open('hosts_user_defined.txt')
     hosts_user_defined=file_user_defined.read()
-    hosts_content.write('#hosts_user_defined\n\n')
-    hosts_content.write(hosts_user_defined)
     hosts_content.write('#hosts_user_defined\n')
+    hosts_content.write(hosts_user_defined)
+    hosts_content.write('\n#hosts_user_defined\n')
     hosts_content.write('\n\n#hosts_by_hostsUpdate\n\n')
     hosts_content.write(hosts_from_web)
     hosts_content.write('\n#hosts_by_hostsUpdate')
