@@ -17,7 +17,7 @@ import ConfigParser
 
 #default setting
 hosts_source = "https://raw.githubusercontent.com/zxdrive/imouto.host/master/imouto.host.txt"
-hosts_folder = os.environ['SYSTEMROOT']+"\\System32\drivers\etc\\"
+hosts_folder = os.environ['SYSTEMROOT']+"\\System32\\drivers\\etc\\"
 hosts_location = hosts_folder + "hosts"
 noAdBlock = 1
 #default setting
