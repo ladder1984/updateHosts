@@ -4,9 +4,8 @@
 #name:updateHosts
 #author:https://github.com/ladder1984
 #python version:2.7.8
-#version:1.1.2
+#version:1.1.3
 ############################
-
 
 from urllib import urlretrieve
 from datetime import *
@@ -19,7 +18,6 @@ import ConfigParser
 hosts_source = "https://raw.githubusercontent.com/zxdrive/imouto.host/master/imouto.host.txt"
 hosts_folder = os.environ['SYSTEMROOT']+"\\System32\\drivers\\etc\\"
 hosts_location = hosts_folder + "hosts"
-noAdBlock = 1
 #default setting
 
 errorLog = open('errorLog.txt', 'a')
@@ -27,7 +25,6 @@ errorLog = open('errorLog.txt', 'a')
 
 def get_config():
     global hosts_source
-    global noAdBlock
     if os.path.exists('config.ini'):
         #清除Windows记事本自动添加的BOM
         content = open('config.ini').read()
@@ -40,7 +37,6 @@ def get_config():
         config.read('config.ini')
         source_id = config.get('source_select', 'source_id')
         hosts_source = config.get('source_select', 'source'+source_id)
-        #noAdBlock = config.getint('other', 'noadblock')
 
 
 def backup_hosts():
@@ -56,6 +52,7 @@ def download_hosts():
         urlretrieve(hosts_source, "hosts_from_web")
     except IOError, e:
         errorLog.write(str(datetime.now())+'\n'+str(e)+'\n\n')
+
 
 def process_hosts():
     hosts_content = open('hosts','w')
@@ -74,17 +71,6 @@ def process_hosts():
     file_user_defined.close()
     os.remove('hosts_from_web')
 
-# def del_adblock():
-#     if noAdBlock == 1:
-#         file_to_open = open('hosts', 'r')
-#         hosts_content = file_to_open.read()
-#         hosts_content = re.sub('#AdBlock START([\s\S]*)#AdBlock END', "#", hosts_content)
-#         file_to_open.close()
-#
-#         file_to_open = open('hosts', 'w')
-#         file_to_open.write(hosts_content)
-#         file_to_open.close()
-
 
 def move_hosts():
     try:
@@ -92,16 +78,15 @@ def move_hosts():
     except IOError, e:
         errorLog.write(str(datetime.now())+'\n'+str(e)+'\n\n')
 
-errorLog.close()
-
 
 def main():
     get_config()
     backup_hosts()
     download_hosts()
     process_hosts()
-#    del_adblock()
     move_hosts()
+    errorLog.close()
+
 
 if __name__ == '__main__':
     main()
