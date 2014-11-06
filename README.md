@@ -55,6 +55,6 @@ hosts源来源于网络，收录入[someHosts](https://github.com/ladder1984/som
 - 欢迎反馈问题和建议，地址：<https://github.com/ladder1984/updateHosts/issues>
 
 ##版权声明
-- 本软件使用[MIT](https://github.com/ladder1984/updateHosts/blob/master/LICENSE)协议
+- 本软件使用MIT协议
 - hosts源版权归原版权方所有
-- Python运行环境取自[Goagent](https://github.com/goagent/goagent)，版权归原版权方所有
+- Python运行环境取自Goagent，版权归原版权方所有
