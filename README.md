@@ -4,13 +4,14 @@ updateHosts
 ##简介
 自动更新hosts文件
 
-##使用方法
+##使用说明
 下载地址：https://github.com/ladder1984/updateHosts/archive/master.zip
 
 解压即可使用，无需安装Python。点击start.vbs运行，点击addToStartup.js加入启动项。
 
-**config.ini**文件可选择hosts源或者填入自定义地址。
-**hosts_user_defined.txt**文件可填入自定义hosts内容
+**config.ini** 文件设置参数，包括选择更新源、是否关闭hosts中的网站过滤。详见config.ini中的注释
+
+**hosts_user_defined.txt** 文件可填入自定义hosts内容
 
 **注意：**
 - 可能需要授予程序管理员权限：右击python27.exe，选中“属性”，在“兼容性”里勾选“以管理员身份运行此程序”。
