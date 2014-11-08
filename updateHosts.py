@@ -3,8 +3,8 @@
 #############################
 #name:updateHosts
 #author:https://github.com/ladder1984
-#python version:2.7.8
-#version:1.2.0
+#version:1.2.1
+#license:MIT
 ############################
 
 from urllib import urlretrieve
