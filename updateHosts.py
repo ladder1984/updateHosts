@@ -18,7 +18,7 @@ import ConfigParser
 hosts_folder = os.environ['SYSTEMROOT']+"\\System32\\drivers\\etc\\"
 hosts_location = hosts_folder + "hosts"
 
-hosts_source = "https://raw.githubusercontent.com/zxdrive/imouto.host/master/imouto.host.txt"
+hosts_source = "https://raw.githubusercontent.com/vokins/simpleu/master/hosts"
 not_block_sites = 0
 #default setting
 
