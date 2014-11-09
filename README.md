@@ -2,7 +2,7 @@ updateHosts
 ============
 
 ##简介
-自动更新hosts文件
+自动从网络下载hosts文件，hosts源由用户设置
 
 ##使用说明
 下载地址：https://github.com/ladder1984/updateHosts/archive/master.zip
@@ -11,13 +11,14 @@ updateHosts
 
 **config.ini** 文件设置参数，包括选择更新源、是否关闭hosts中的网站过滤。详见config.ini中的注释
 
+
 **hosts_user_defined.txt** 文件可填入自定义hosts内容
 
 **注意：**
+
 - 可能需要授予程序管理员权限：右击python27.exe，选中“属性”，在“兼容性”里勾选“以管理员身份运行此程序”。
 - 建议使用notepad++编辑文件
 - 删除启动：删除“启动”文件夹内的快捷方式，“启动”文件夹在开始菜单内
-
 
 
 ##运行环境
@@ -52,10 +53,8 @@ hosts源来源于网络，收录入[someHosts](https://github.com/ladder1984/som
 ##其他
 - updateHosts项目地址：<https://github.com/ladder1984/updateHosts>
 - ChangeLog：<https://github.com/ladder1984/updateHosts/blob/master/ChangeLog.txt>
-- 版本号命名遵循 语义化版本控制规范（SemVer）
+- 作者：<https://github.com/ladder1984> 博客：<http://www.itoldme.net>
 - 欢迎反馈问题和建议，地址：<https://github.com/ladder1984/updateHosts/issues>
 
 ##版权声明
 - 本软件使用MIT协议
-- hosts源版权归原版权方所有
-- Python运行环境取自Goagent，版权归原版权方所有
