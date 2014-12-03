@@ -45,7 +45,7 @@ hosts源来源于网络，收录入[someHosts](https://github.com/ladder1984/som
 - smarthosts <https://code.google.com/p/smarthosts/>
 - imouto.host <https://github.com/zxdrive/imouto.host>
 - google-hosts <https://github.com/txthinking/google-hosts>
-- simpleu-hosts <https://simpleu.googlecode.com/svn/trunk/hosts>
+- simpleu-hosts <https://github.com/vokins/simpleu>
 
 用户可在config.ini中选择，或者自定义hosts源
 
