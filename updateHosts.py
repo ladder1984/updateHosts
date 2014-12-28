@@ -3,11 +3,11 @@
 #############################
 #name:updateHosts
 #author:https://github.com/ladder1984
-#version:1.2.2
+#version:1.2.3
 #license:MIT
 ############################
 
-from urllib import urlretrieve
+import urllib
 from datetime import *
 import re
 import os
@@ -63,10 +63,14 @@ def backup_hosts():
 
 
 def download_hosts():
-    try:
-        urlretrieve(hosts_source, "hosts_from_web")
-    except BaseException, e:
-        errorLog.write(str(datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
+    for i in range(10):
+        try:
+            urllib.urlretrieve(hosts_source, "hosts_from_web")
+            if os.path.getsize("hosts_from_web") > 1024*10:
+                break
+        except BaseException, e:
+            errorLog.write(str(datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
+
 
 
 def process_hosts():
