@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
 #############################
-#name:updateHosts
-#author:https://github.com/ladder1984
-#version:1.2.3
-#license:MIT
+# name:updateHosts
+# author:https://github.com/ladder1984
+# version:1.2.3
+# license:MIT
 ############################
 
 import urllib
@@ -15,13 +15,13 @@ import shutil
 import ConfigParser
 import sys
 
-#default setting
+# default setting
 hosts_folder = os.environ['SYSTEMROOT']+"\\System32\\drivers\\etc\\"
 hosts_location = hosts_folder + "hosts"
 
 hosts_source = "https://raw.githubusercontent.com/vokins/simpleu/master/hosts"
 not_block_sites = 0
-#default setting
+# default setting
 
 errorLog = open('errorLog.txt', 'a')
 
@@ -35,7 +35,7 @@ def get_config():
     global not_block_sites
     if os.path.exists('config.ini'):
         try:
-            #清除Windows记事本自动添加的BOM
+            # 清除Windows记事本自动添加的BOM
             content = open('config.ini').read()
             content = re.sub(r"\xfe\xff", "", content)
             content = re.sub(r"\xff\xfe", "", content)
