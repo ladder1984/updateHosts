@@ -23,7 +23,8 @@ updateHosts
 
 
 ##运行环境
-- 操作系统：Windows
+- 操作系统：Windows、Linux、Mac OS
+
 
 ##功能描述
 - 下载hosts文件并更新本地hosts

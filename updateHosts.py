@@ -1,13 +1,15 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 #############################
 # name:updateHosts
 # author:https://github.com/ladder1984
-# version:1.3.0
+# version:1.3.1
 # license:MIT
 ############################
 
 import urllib2
+import platform
 from datetime import *
 import re
 import os
@@ -16,7 +18,7 @@ import ConfigParser
 import sys
 
 # default setting
-hosts_folder = os.environ['SYSTEMROOT']+"\\System32\\drivers\\etc\\"
+hosts_folder = ""
 hosts_location = hosts_folder + "hosts"
 
 source_list = ['https://raw.githubusercontent.com/vokins/simpleu/master/hosts']
@@ -28,6 +30,16 @@ errorLog = open('errorLog.txt', 'a')
 
 def get_cur_info():
     return(sys._getframe().f_back.f_code.co_name)
+
+
+def check_system():
+    global hosts_folder
+    global hosts_location
+    if platform.system() == 'Windows':
+        hosts_folder = os.environ['SYSTEMROOT']+"\\System32\\drivers\\etc\\"
+    elif platform.system() == 'Linux'or platform.system() == 'Darwin':
+        hosts_folder = "/etc/"
+    hosts_location = hosts_folder + "hosts"
 
 
 def get_config():
@@ -82,8 +94,6 @@ def process_hosts():
         hosts_from_web = file_from_web.read()
         file_user_defined = open('hosts_user_defined.txt')
         hosts_user_defined = file_user_defined.read()
-        hosts_content.write("127.0.0.1	localhost\n")
-        hosts_content.write("::1	localhost\n\n")
         hosts_content.write('#hosts_user_defined\n')
         hosts_content.write(hosts_user_defined)
         hosts_content.write('\n#hosts_user_defined\n')
@@ -108,6 +118,7 @@ def move_hosts():
 
 
 def main():
+    check_system()
     get_config()
     backup_hosts()
     download_hosts()
