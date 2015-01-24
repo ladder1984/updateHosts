@@ -3,11 +3,11 @@
 #############################
 # name:updateHosts
 # author:https://github.com/ladder1984
-# version:1.2.3
+# version:1.3.0
 # license:MIT
 ############################
 
-import urllib
+import urllib2
 from datetime import *
 import re
 import os
@@ -19,7 +19,7 @@ import sys
 hosts_folder = os.environ['SYSTEMROOT']+"\\System32\\drivers\\etc\\"
 hosts_location = hosts_folder + "hosts"
 
-hosts_source = "https://raw.githubusercontent.com/vokins/simpleu/master/hosts"
+source_list = ['https://raw.githubusercontent.com/vokins/simpleu/master/hosts']
 not_block_sites = 0
 # default setting
 
@@ -31,7 +31,7 @@ def get_cur_info():
 
 
 def get_config():
-    global hosts_source
+    global source_list
     global not_block_sites
     if os.path.exists('config.ini'):
         try:
@@ -45,7 +45,10 @@ def get_config():
             config = ConfigParser.ConfigParser()
             config.read('config.ini')
             source_id = config.get('source_select', 'source_id')
-            hosts_source = config.get('source_select', 'source'+source_id)
+            source_list = source_id.split(",")
+            for i in range(len(source_list)):
+                source_list[i]=config.get('source_select', 'source'+str(i+1))
+
             not_block_sites = config.get("other", "not_block_sites")
         except BaseException, e:
             errorLog.write(str(datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
@@ -63,14 +66,13 @@ def backup_hosts():
 
 
 def download_hosts():
-    for i in range(10):
-        try:
-            urllib.urlretrieve(hosts_source, "hosts_from_web")
-            if os.path.getsize("hosts_from_web") > 1024*10:
-                break
-        except BaseException, e:
-            errorLog.write(str(datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
-
+    try:
+        hosts_from_web = open("hosts_from_web","a")
+        for x in source_list:
+            data=urllib2.urlopen(x)
+            hosts_from_web.write(data.read())
+    except BaseException, e:
+        errorLog.write(str(datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
 
 
 def process_hosts():
