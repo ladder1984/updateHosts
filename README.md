@@ -2,7 +2,7 @@ updateHosts
 ============
 
 ##简介
-自动从网络下载hosts文件，hosts源由用户设置
+自动从网络下载hosts文件，hosts源由用户设置。
 
 ##使用说明
 下载地址：<https://github.com/ladder1984/updateHosts/archive/master.zip>
@@ -15,6 +15,7 @@ updateHosts
 
 **注意：**
 
+- 本软件不提供hosts文件，而是从从用户定义的地址下载hosts，默认提供几个流行的hosts，参见config.ini
 - 建议使用前手动备份hosts文件
 - 可能需要授予程序管理员权限：右击python27.exe，选中“属性”，在“兼容性”里勾选“以管理员身份运行此程序”。
 - 建议使用notepad++编辑文件
@@ -25,17 +26,18 @@ updateHosts
 - 操作系统：Windows
 
 ##功能描述
-- **（已完成）**下载hosts文件并更新本地hosts
-- **（已完成）**可单文件执行updateHosts
-- **（已完成）**可添加启动项
-- **（已完成）**生成错误日志errorLog.txt
-- **（已完成）**备份hosts文件
-- **（已完成）**分离出单独的配置文件
-- **（已完成）**可选的hosts更新源
-- **（已完成）**运行时不显示窗口
-- **（已完成）**打包成exe文件，无需安装python即可使用
-- **（已去除）**可去除AdBlock部分
-- **（已完成）** 用户可自定义hosts内容
+- 下载hosts文件并更新本地hosts
+- 用户可自定义hosts内容
+- 可选的hosts更新源
+- 可以选择下载多个hosts文件并合并
+- 备份hosts文件
+- 可去除屏蔽广告部分
+- 分离出单独的配置文件
+- 运行时不显示窗口
+- 打包成exe文件，无需安装python即可使用
+- 可单文件执行updateHosts
+- 可添加启动项
+- 生成错误日志errorLog.txt
 - 待添加
 
 
