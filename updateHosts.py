@@ -4,18 +4,20 @@
 #############################
 # name:updateHosts
 # author:https://github.com/ladder1984
-# version:1.3.1
+# version:1.3.2
 # license:MIT
 ############################
 
 import urllib2
 import platform
-from datetime import *
+import datetime
+import time
 import re
 import os
 import shutil
 import ConfigParser
 import sys
+import socket
 
 # default setting
 hosts_folder = ""
@@ -32,6 +34,24 @@ def get_cur_info():
     return(sys._getframe().f_back.f_code.co_name)
 
 
+def exit_this():
+    errorLog.close()
+    sys.exit()
+
+
+def check_connection():
+    sleep_seconds = 1200
+    i = 0
+    for i in range(sleep_seconds):
+        try:
+            socket.gethostbyname("www.baidu.com")
+            break
+        except socket.gaierror:
+            time.sleep(1)
+    if i == sleep_seconds - 1:
+        exit_this()
+
+
 def check_system():
     global hosts_folder
     global hosts_location
@@ -39,6 +59,8 @@ def check_system():
         hosts_folder = os.environ['SYSTEMROOT']+"\\System32\\drivers\\etc\\"
     elif platform.system() == 'Linux'or platform.system() == 'Darwin':
         hosts_folder = "/etc/"
+    else:
+        exit_this()
     hosts_location = hosts_folder + "hosts"
 
 
@@ -63,7 +85,8 @@ def get_config():
 
             not_block_sites = config.get("other", "not_block_sites")
         except BaseException, e:
-            errorLog.write(str(datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
+            errorLog.write(str(datetime.datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
+            exit_this()
 
 
 def backup_hosts():
@@ -74,7 +97,8 @@ def backup_hosts():
         if os.path.isfile(hosts_folder + 'hosts'):
             shutil.copy(hosts_folder+'hosts', hosts_folder+'backup_hosts_last_by_updateHosts')
     except BaseException, e:
-        errorLog.write(str(datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
+        errorLog.write(str(datetime.datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
+        exit_this()
 
 
 def download_hosts():
@@ -84,7 +108,8 @@ def download_hosts():
             data=urllib2.urlopen(x)
             hosts_from_web.write(data.read())
     except BaseException, e:
-        errorLog.write(str(datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
+        errorLog.write(str(datetime.datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
+        exit_this()
 
 
 def process_hosts():
@@ -107,17 +132,20 @@ def process_hosts():
         file_user_defined.close()
         os.remove('hosts_from_web')
     except BaseException, e:
-        errorLog.write(str(datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
+        errorLog.write(str(datetime.datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
+        exit_this()
 
 
 def move_hosts():
     try:
         shutil.move("hosts", hosts_location)
     except BaseException, e:
-        errorLog.write(str(datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
+        errorLog.write(str(datetime.datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
+        exit_this()
 
 
 def main():
+    check_connection()
     check_system()
     get_config()
     backup_hosts()
