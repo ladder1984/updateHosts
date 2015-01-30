@@ -4,7 +4,7 @@
 #############################
 # name:updateHosts
 # author:https://github.com/ladder1984
-# version:1.3.2
+# version:1.3.3
 # license:MIT
 ############################
 
@@ -25,6 +25,7 @@ hosts_location = hosts_folder + "hosts"
 
 source_list = ['https://raw.githubusercontent.com/vokins/simpleu/master/hosts']
 not_block_sites = 0
+always_on = 0
 # default setting
 
 errorLog = open('errorLog.txt', 'a')
@@ -67,6 +68,7 @@ def check_system():
 def get_config():
     global source_list
     global not_block_sites
+    global always_on
     if os.path.exists('config.ini'):
         try:
             # 清除Windows记事本自动添加的BOM
@@ -83,7 +85,8 @@ def get_config():
             for i in range(len(source_list)):
                 source_list[i]=config.get('source_select', 'source'+str(i+1))
 
-            not_block_sites = config.get("other", "not_block_sites")
+            not_block_sites = config.get("function", "not_block_sites")
+            always_on = config.get("function","always_on")
         except BaseException, e:
             errorLog.write(str(datetime.datetime.now())+'\n'+'function:'+get_cur_info()+'\nerror:'+str(e)+'\n\n')
             exit_this()
@@ -157,3 +160,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+if always_on == "1":
+    while 1:
+        time.sleep(3600)
+        main()
