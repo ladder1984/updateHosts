@@ -9,7 +9,7 @@ updateHosts
 
 解压即可使用，无需安装Python。点击start.vbs运行，点击addToStartup.js加入启动项（Windows有效）。
 
-**config.ini：** 设置参数，包括选择更新源、是否关闭hosts中的网站过滤。详见config.ini中的注释
+**config.ini：** 设置参数，包括选择更新源、开启关闭功能。详见config.ini中的注释
 
 **hosts_user_defined.txt：** 可填入自定义hosts内容
 
