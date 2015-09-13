@@ -75,7 +75,6 @@ hosts源来源于网络，收录入[someHosts](https://github.com/ladder1984/som
 - simpleu-hosts <https://github.com/vokins/simpleu>
 - google-hosts <https://github.com/txthinking/google-hosts>
 - GavinHosts <http://blog.crpuer.com/GavinHosts.txt>
-- General Hosts (ghosts) <http://h.heartnn.eu.org/hosts>
 - imouto.host <https://github.com/zxdrive/imouto.host>
 
 用户可在config.ini中选择，或者自定义hosts源。
